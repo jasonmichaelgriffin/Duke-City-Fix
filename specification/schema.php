@@ -51,6 +51,6 @@
 			<li></li>
 		</ul>
 		<h6><b>High Level ERD Diagram</b></h6>
-			<img src=""images/
+			<img src="images/dcf_diagram.svg"/>
 	</body>
 </html>
