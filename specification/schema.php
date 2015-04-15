@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h1><b><i>Conceptual Model</i> Mock Up Based on Duke City Fix Website (DCF)</b></h1>
-			<p>A fictional <i>conceptual</i> model I've created for DC<br/></p>
+			<p>A fictional <i>conceptual</i> model I've created for DCF<br/></p>
 		<h2><b>User Profile Details</b></h2>
 			<p>User Data Required to make create content and comment</p>
 			<ul>

@@ -8,7 +8,7 @@
 		<h1><b>Use Cases Mocked Up based on Duke City Fix Website</b></h1>
 		<p>Here I've created two fictional <i>Use Cases</i> per the class assignment<br/></p>
 		<h2><b>Use Case 1 "Content Creator"</b></h2>
-			<p>Primary goal - to post pictures and peruse blog posts<br/>
+			<p>Primary goal - to post pictures and peruse blog posts accessing the site from a desktop at home<br/>
 			<br/>
 			Specific steps<br/>
 		</p>
@@ -21,7 +21,7 @@
 		</ul>
 		<br/>
 		<h3><b>Use Case 2 "Lurker"</b></h3>
-		<p>Primary goal - to read what other locals are posting about his shared interests<br/>
+		<p>Primary goal - to read what other locals are posting about accessing the site from an iPad at home<br/>
 			<br>
 			Specific steps<br/>
 		<ul>
