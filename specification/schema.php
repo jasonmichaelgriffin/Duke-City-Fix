@@ -10,33 +10,33 @@
 		<h2><b>User Profile Details</b></h2>
 			<p>User Data Required to make create content and comment</p>
 			<ul>
-				<li>E-mail address</i>
-				<i>Full Name (one field)</li>
+				<li>E-mail address</li>
+				<li>Full Name (one field)</li>
 			</ul>
 			<p>User Data Required by site but unnecessary to create content and comment</p>
 			<ul>
-				<i>Gender</i>
-				<i>Country</i>
-				<i>Zip</i>
-				<i>About Me Comment (displayed with blog posts)</i>
-				<i>Neighborhood ("where I live")</i>
-				<i>What Am I (business vs person)</i>
+				<li>Gender</li>
+				<li>Country</li>
+				<li>Zip</li>
+				<li>About Me Comment (displayed with blog posts)</li>
+				<li>Neighborhood ("where I live")</li>
+				<li>What Am I (business vs person)</li>
 			</ul>
 		<h3><b>Blog Details</b></h3>
 			<p>Data required for a blog post</p>
 			<ul>
-				<i>User Full Name</i>
-				<i>Blog Title</i>
-				<i>Content (text, photos, etc.)</i>
-				<i>Publish Date/time (user controlled)</i>
+				<li>User Full Name</li>
+				<li>Blog Title</li>
+				<li>Content (text, photos, etc.)</li>
+				<li>Publish Date/time (user controlled)</li>
 			</ul>
 			<h4><b>Blog Comment</b></h4>
 				<p>Data required for a blog comment</p>
 				<ul>
-					<i>User Full Name</i>
-					<i>Blog Title</i>
-					<i>Comment (text)</i>
-					<i>Timestamp (not user controlled)</i>
+					<li>User Full Name</li>
+					<li>Blog Title</li>
+					<li>Comment (text)</li>
+					<li>Timestamp (not user controlled)</li>
 				</ul>
 	</body>
 </html>
