@@ -26,9 +26,7 @@
 			Specific steps<br/>
 		<ul>
 			<li>Navigate to site via Duke City Fix home URL</li>
-			<li>Navigate to Groups section</li>
-			<li>Search for "chicken"</li>
-			<li>Chooses appropriate Chicken related group and peruses various posts within navigating by clicking on titles and backing out via the backspace arrow on his browser</li>
+			<li>Enters "goes into" several blog posts, navigates back to home page via "back" browser function (backspace key) each time</li>
 		</ul>
 	</body>
 </html>
