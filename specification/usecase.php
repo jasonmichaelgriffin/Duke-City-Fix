@@ -7,30 +7,29 @@
 	<body>
 		<h1><b>Use Cases Mocked Up based on Duke City Fix Website</b></h1>
 		<p>Here I've created two fictional <i>Use Cases</i> per the class assignment<br/></p>
-		<h2><b>Persona 1 "The Content Creator"</b></h2>
-		<p>Name - Jane Baca<br/>
-			Age - 34<br/>
-			Education - College Graduate<br/>
-			Ethnicity - Hispanic<br/>
-			Primary Access Method - Desktop<br/>
-			Goals for accessing the site:<br/>
+		<h2><b>Use Case 1 "Content Creator"</b></h2>
+			<p>Primary goal - to post pictures and peruse blog posts<br/>
+			<br/>
+			Specific steps<br/>
 		</p>
 		<ul>
-			<li>Posting her own local interest photos</li>
-			<li>Read featured blog posts</li>
+			<li>Navigate to site via Duke City Fix home URL</li>
+			<li>Sign Up/Create Profile</li>
+			<li>Post local interest picture in new blog post</li>
+			<li>Navigate to home page and peruse blog posts</li>
+			<li>Enters "goes into" several blog posts, navigates back to home page via "back" browser function (backspace key) each time</li>
 		</ul>
 		<br/>
-		<h3><b>Persona 2 "The Lurker"</b></h3>
-		<p>Name - John Smith<br/>
-			Age - 39<br/>
-			Education - Some College<br/>
-			Ethnicity - White<br/>
-			Primarily accesses on mobile device (iPad)<br/>
-			Goals for accessing the site:
-		</p>
+		<h3><b>Use Case 2 "Lurker"</b></h3>
+		<p>Primary goal - to read what other locals are posting about his shared interests<br/>
+			<br>
+			Specific steps<br>
+			<br/>
 		<ul>
-			<li>Read posts from other locals with his same interest (urban goat and chicken farming)</li>
-			<li>Reads the Morning Fix daily post</li>
+			<li>Navigate to site via Duke City Fix home URL</li>
+			<li>Navigate to Groups section</li>
+			<li>Search for "chicken"</li>
+			<li>Chooses appropriate Chicken related group and peruses various posts within navigating by clicking on titles and backing out via the backspace arrow on his browser</li>
 		</ul>
 	</body>
 </html>

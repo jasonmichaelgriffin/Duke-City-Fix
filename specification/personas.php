@@ -29,7 +29,7 @@
 			Goals for accessing the site:
 			</p>
 			<ul>
-				<li>Read posts from other locals with his same interest (urban goat and chicken farming)</li>
+				<li>Read posts from other locals with his same interest (urban chicken farming)</li>
 				<li>Reads the Morning Fix daily post</li>
 			</ul>
 	</body>
