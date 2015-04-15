@@ -5,8 +5,8 @@
 		<title>Personas</title>
 	</head>
 	<body>
-		<h1><b>Personas Mocked Up based on Duke City Fix Website</b></h1>
-			<p>Here I've created two fictional personas per the class assignment<br/></p>
+		<h1><b><i>Personas</i> Mocked Up based on Duke City Fix Website</b></h1>
+			<p>Here I've created two fictional <i>Personas</i> per the class assignment<br/></p>
 		<h2><b>Persona 1 "The Content Creator"</b></h2>
 			<p>Name - Jane Baca<br/>
 			Age - 34<br/>
