@@ -14,24 +14,29 @@
 			Ethnicity - Hispanic<br/>
 			Primary Access Method - Desktop<br/>
 			Goals for accessing the site:<br/>
-				Posting her own local interest photos<br/>
-				Read featured blog posts<br/>
-				<br/>	</p>
-		<h3><b>Persona 2 "The Lurker"<b></b></h3>
+			</p>
+			<ul>
+				<li>Posting her own local interest photos</li>
+				<li>Read featured blog posts</li>
+				</ul>
+		<br/>
+		<h3><b>Persona 2 "The Lurker"</b></h3>
 			<p>Name - John Smith<br/>
 			Age - 39<br/>
 			Education - Some College<br/>
 			Ethnicity - White<br/>
 			Primarily accesses on mobile device (iPad)<br/>
-			Goals for accessing the site:<br/>
-			Read posts from other locals with his same interest (urban goat and chicken farming)<br/>
-			Reads the Morning Fix daily post<br/>
-		</p>
+			Goals for accessing the site:
+			</p>
+			<ul>
+				<li>Read posts from other locals with his same interest (urban goat and chicken farming)</li>
+				<li>Reads the Morning Fix daily post</li>
+			</ul>
 	</body>
 </html>
-/**
+<!--/**
  * Created by PhpStorm.
  * User: Jason Griffin
  * Date: 4/15/2015
  * Time: 9:41 AM
- */
+ *//>
