@@ -23,8 +23,7 @@
 		<h3><b>Use Case 2 "Lurker"</b></h3>
 		<p>Primary goal - to read what other locals are posting about his shared interests<br/>
 			<br>
-			Specific steps<br>
-			<br/>
+			Specific steps<br/>
 		<ul>
 			<li>Navigate to site via Duke City Fix home URL</li>
 			<li>Navigate to Groups section</li>
@@ -33,9 +32,3 @@
 		</ul>
 	</body>
 </html>
-<!--/**
- * Created by PhpStorm.
- * User: Jason Griffin
- * Date: 4/15/2015
- * Time: 9:41 AM
- *//>
