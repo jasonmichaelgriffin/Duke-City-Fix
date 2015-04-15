@@ -50,5 +50,7 @@
 			<li>Each comment can be associated with only one blog post</li>
 			<li></li>
 		</ul>
+		<h6><b>High Level ERD Diagram</b></h6>
+			<img src=""images/
 	</body>
 </html>
