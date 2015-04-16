@@ -5,9 +5,9 @@
 		<title>Conceptual Model</title>
 	</head>
 	<body>
-		<h1><b><i>Conceptual Model</i> Mock Up Based on Duke City Fix Website (DCF)</b></h1>
-			<p>A fictional <i>conceptual</i> model I've created for DCF<br/></p>
-		<h2><b>User Profile Details</b></h2>
+		<h1><strong><em>Conceptual Model</em> Mock Up Based on Duke City Fix Website (DCF)</strong></h1>
+			<p>A fictional <em>conceptual</em> model I've created for DCF<br/></p>
+		<h2><strong>User Profile Details</strong></h2>
 			<p>User Data Required to make create content and comment</p>
 			<ul>
 				<li>E-mail address</li>
@@ -22,7 +22,7 @@
 				<li>Neighborhood ("where I live")</li>
 				<li>What Am I (business vs person)</li>
 			</ul>
-		<h3><b>Blog Details</b></h3>
+		<h3><strong>Blog Details</strong></h3>
 			<p>Data required for a blog post</p>
 			<ul>
 				<li>User Full Name</li>
@@ -30,7 +30,7 @@
 				<li>Content (text, photos, etc.)</li>
 				<li>Publish Date/time (user controlled)</li>
 			</ul>
-			<h4><b>Blog Comment</b></h4>
+			<h4><strong>Blog Comment</strong></h4>
 				<p>Data required for a blog comment</p>
 				<ul>
 					<li>User Full Name</li>
@@ -38,7 +38,7 @@
 					<li>Comment (text)</li>
 					<li>Timestamp (not user controlled)</li>
 				</ul>
-		<h5><b>Relationships</b></h5>
+		<h5><strong>Relationships</strong></h5>
 		<p>Notes on relationships</p>
 		<ul>
 			<li>Each user can have only one profile (uniquely defined by email address and name)</li>
@@ -50,7 +50,7 @@
 			<li>Each comment can be associated with only one blog post</li>
 			<li></li>
 		</ul>
-		<h6><b>High Level ERD Diagram</b></h6>
+		<h6><strong>High Level ERD Diagram</strong></h6>
 		<figure>
 			<img src="../images/dcf_diagram.svg" alt="DCF ERD AKA Look at the pretty arrows">
 		</figure>

@@ -5,9 +5,9 @@
 		<title>Personas</title>
 	</head>
 	<body>
-		<h1><b><i>Personas</i> Mocked Up based on Duke City Fix Website</b></h1>
-			<p>Here I've created two fictional <i>Personas</i> per the class assignment<br/></p>
-		<h2><b>Persona 1 "The Content Creator"</b></h2>
+		<h1><strong><em>Personas</em> Mocked Up based on Duke City Fix Website</strong></h1>
+			<p>Here I've created two fictional <em>Personas</em> per the class assignment<br/></p>
+		<h2><strong>Persona 1 "The Content Creator"</strong></h2>
 			<p>Name - Jane Baca<br/>
 			Age - 34<br/>
 			Education - College Graduate<br/>
@@ -20,7 +20,7 @@
 				<li>Read featured blog posts</li>
 				</ul>
 		<br/>
-		<h3><b>Persona 2 "The Lurker"</b></h3>
+		<h3><strong>Persona 2 "The Lurker"</strong></h3>
 			<p>Name - John Smith<br/>
 			Age - 39<br/>
 			Education - Some College<br/>
