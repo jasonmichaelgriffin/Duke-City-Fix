@@ -52,7 +52,7 @@
 		</ul>
 		<h6><strong>High Level ERD Diagram</strong></h6>
 		<figure>
-			<img src="../images/dcf_diagram.svg" alt="DCF ERD AKA Look at the pretty arrows">
+			<img src="../temp_images/dcf_diagram.svg" alt="DCF ERD AKA Look at the pretty arrows">
 		</figure>
 	</body>
 </html>
