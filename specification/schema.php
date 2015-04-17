@@ -25,7 +25,7 @@
 		<h3><strong>Blog Details</strong></h3>
 			<p>Data required for a blog post</p>
 			<ul>
-				<li>User Full Name</li>
+				<li>User ID</li>
 				<li>Blog Title</li>
 				<li>Content (text, photos, etc.)</li>
 				<li>Publish Date/time (user controlled)</li>
@@ -33,8 +33,8 @@
 			<h4><strong>Blog Comment</strong></h4>
 				<p>Data required for a blog comment</p>
 				<ul>
-					<li>User Full Name</li>
-					<li>Blog Title</li>
+					<li>User ID</li>
+					<li>Blog ID</li>
 					<li>Comment (text)</li>
 					<li>Timestamp (not user controlled)</li>
 				</ul>
