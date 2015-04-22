@@ -27,38 +27,57 @@ class DcfProfile {
 	/**
 	 * constructor for profile creation
 	 *
-	 * @param int $newDcfProfile id of the profile.  Null if new profile
+	 * @param int $newUserId id of the profile.  Null if new profile
 	 * @param string $newEMail The e-mail of the user
 	 * @param string $newUserName the username
-	 * @throws EXCEPTION IF EMAIL IS NOT FORMATTED AS A VALID E-MAIL (using the fallible email format validator we went over yesterday
-	 * @throws EXCEPTION OF USERNAME IS EMPTY/NULL
-	 */
+	 * @throws InvalidArgumentException if data types are not valid
+	  *@throws RangeException if $newUserId is not positive
+	 **/
 	public function __construct($newUserId, $newEMail, $newUserName) {
-		// TODO: finish this try block
-		/**try {
+		try {
+
 			$this->setUserID($newUserId);
 			$this->setEmail($newEMail);
 			$this->setUserName($newUserName);
-		} /**catch INSERT CATCHES HERE FOR THE EXCEPTIONS THROWN IN THE ABOVE FUNCTIONS, BE SURE TO INCLUDE A FINAL ONE USING EXCEPTION TO CATCH ANY MISSED.
-			**/
+		} catch(InvalidArgumentException $invalidArgument) {
+			//  Rethrow the exception to the caller
+			throw(new InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
+		} catch(RangeException $range) {
+			//  Rethrow the exception to the caller
+			throw(new RangeException($range->getMessage (), 0, $range));
+		}
 	}
+
 	/**
 	 * access method for userId
 	 *
 	 * @return INT value of user id
 	 */
-	public function getUserID () {
-		return($this->userId);
+	public function getUserID() {
+		return ($this->userId);
 	}
 
 	/**
 	 * mutator method for userID
-	 * TODO: fill in @param and @throws for the below setUserID
 	 *
-	 */
-	// TODO: write setUserID()
-	//TODO:  Ask Dylan - if we always want to auto-increment the ID and never allow someone/thing to manually define it couldn't we just have this setUserID define it as null and leave it at that?
-	public function setUserID() {
+	 *@param int $newUserId new userID
+	 *@throws InvalidArgumentException if $newUserID is not an integer
+	 *@throws RangeException if $newUserID is not positive
+	 *	 */
+		public function setUserID($newUserId) {
+
+		//verify the userid is valid
+		filter_var($newUserId, FILTER_VALIDATE_INT);
+		if($newUserId === false) {
+			throw(new InvalidArgumentException("User ID must be an integer"));
+		}
+		//verify the userid is positive
+		if($newUserId <= 0) {
+			throw(new RangeException("User ID Must Be Positive"));
+		}
+
+		//convert and store the userID
+		$this->userId = intval($newUserId);
 	}
 
 	/**
@@ -66,7 +85,7 @@ class DcfProfile {
 	 *
 	 * @return string value of eMail
 	 **/
-	public function getEMail () {
+	public function getEMail() {
 		return ($this->eMail);
 	}
 
@@ -76,27 +95,25 @@ class DcfProfile {
 	 * @param string $newEMail new value for eMail
 	 * @throws InvalidArgumentException if $newEMail is empty
 	 * @throws InvalidArgumentException if $newEMail is not in a valid format per FILTER_VALIDATE_EMAIL
-	 * 	 * TODO:  fill in @param and @throws for the below setEMAIL
-	 */
-
+	 **/
 
 	public function setEMail($newEMail) {
-		//Checks if $newEMail is empty
+		//  Checks if $newEMail is empty
 		if(empty ($newEMail) === true) {
 			throw(new InvalidArgumentException("Email field cannot be empty"));
 		}
-		// trim any white space
+		//  Trim any white space
 		$newEMail = trim($newEMail);
 
-		//Remove all characters except letters, digits, and !#$%&'*+-/=?^_`{|}~@.[].
+		//  Remove all characters except letters, digits, and !#$%&'*+-/=?^_`{|}~@.[].
 		$newEMail = (filter_var($newEMail, FILTER_SANITIZE_EMAIL));
 
-		// validate e-mail format
-		if(filtervar(@newEMail, FILTER_VALIDATE_EMAIL) === false) {
+		//  Validate e-mail format
+		if(filter_var($newEMail, FILTER_VALIDATE_EMAIL) === false) {
 			throw(new InvalidArgumentException("Submitted eMail $newEMail is not in a valid format"));
 		}
 
-		// convert and store the eMail
+		// Convert and store the eMail
 		$this->eMail = $newEMail;
 	}
 
@@ -104,22 +121,30 @@ class DcfProfile {
 	/**
 	 * accessor method for userName
 	 *
-	 *@return string value of userName
+	 * @return string value of userName
 	 **/
 	public function getUserName() {
-		return($this->userName);
+		return ($this->userName);
 	}
 
 	/**
 	 * mutator method for userName
 	 *
-	 * TODO:  fill in @param and @throws for the below setUserName
+	 * @param string $newUserName new value of user name
+	 * @throw InvalidArgumentException if $userName is null
 	 */
-	//TODO:  write setUserName()
-	public function setUserName() {
-	}
+	public function setUserName($newUserName) {
+		//checks if $newUserName is null
+		if($newUserName === null) {
+			throw (new InvalidArgumentException("User Name cannot be blank"));
+		}
+		//  Trims space in $newUserName
+		$newUserName = trim($newUserName);
 
+		//  Sanitize $newUserName to remove tags
+		$newUserName = filter_var($newUserName, FILTER_SANITIZE_STRING);
+
+		// Convert and store the email
+		$this->userName = $newUserName;
+	}
 }
-/**
- *
- */
