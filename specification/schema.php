@@ -48,7 +48,6 @@
 			<li>Each user can author many comments</li>
 			<li>Each comment can have only one author</li>
 			<li>Each comment can be associated with only one blog post</li>
-			<li></li>
 		</ul>
 		<h6><strong>High Level ERD Diagram</strong></h6>
 		<figure>
