@@ -45,6 +45,9 @@ class DcfProfile {
 		} catch(RangeException $range) {
 			//  Rethrow the exception to the caller
 			throw(new RangeException($range->getMessage (), 0, $range));
+		} catch(Exception $exception) {
+			//Rethrow the exception to the caller
+			throw(new PDOException($exception->getMessage (), 9, $exception));
 		}
 	}
 
