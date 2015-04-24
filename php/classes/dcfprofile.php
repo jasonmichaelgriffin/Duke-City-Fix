@@ -150,4 +150,19 @@ class DcfProfile {
 		// Convert and store the email
 		$this->userName = $newUserName;
 	}
+
+	/**
+	 * Inserts this profile into mySQL
+	 *
+	 * @param
+	 */
+
+
+
+
+
+
+
+
+//  Class closing tag (mentioned just for code tracking purposes
 }
