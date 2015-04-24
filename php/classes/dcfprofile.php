@@ -218,8 +218,42 @@ class DcfProfile {
 	}
 
 	/** TODO: write getFooByPrimaryKey
+	 * gets a dcfProfile by userId
+	 *
+	 * @param PDO $pdo pointer to PDO connection, by reference
+	 * @param int $userId userID to search for
+	 * @return mixed dcfProfile found or null if none meet the criteria
+	 * * @throws PDOException when mySQL related errors occur
 	 **/
+	public function getDcfProfileByUserId(PDO &$pdo) {
+		// sanitize the userId prior to searching
+		$userId = filter_var($userId, FILTER_VALIDATE_INT);
+		if($userId === false) {
+			throw(new PDOException("userId is not an integer as expected"));
+		}
 
+		//create query template
+		$query = "SELECT userID, eMail, userName FROM dcfProfile WHERE userId = :userId";
+		$statement = $pdo->prepare($query);
+
+		//bind the member variables to the place holder in the template
+		$parameters = array("userId" => $this->userId);
+		$statement->execute($parameters);
+
+		// call the dcfProfile from mySQL
+		try {
+			$dcfProfile = null;  //TODO I'm pretty sure this should be the table name, but i could be mistaken and it's supposed to be the primary key
+			$statement->setFetchMode(PDO::FETCH_ASSOC);  //TODO is this correct?  research how this specific line works, not clear from my notes
+			$row = $statement->fetch();
+			if($row !== false) {
+				$dcfProfile = new dcfProfile($row["userId"], $row["eMail"], $row["userName"]);
+			}
+		} catch(Exception $exception) {
+			// if the row is unable to be converted re-throw it
+			throw(new PDOException($exception->getMessage(), 0, $exception));
+		}
+		return($dcfProfile);
+	}
 
 	/** TODO: write getFooBy(userName)
 	 **/
