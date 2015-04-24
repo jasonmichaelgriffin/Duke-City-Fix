@@ -223,9 +223,9 @@ class DcfProfile {
 	 * @param PDO $pdo pointer to PDO connection, by reference
 	 * @param int $userId userID to search for
 	 * @return mixed dcfProfile found or null if none meet the criteria
-	 * * @throws PDOException when mySQL related errors occur
+	 * @throws PDOException when mySQL related errors occur
 	 **/
-	public function getDcfProfileByUserId(PDO &$pdo) {
+	public function getDcfProfileByUserId(PDO &$pdo, $userId) {
 		// sanitize the userId prior to searching
 		$userId = filter_var($userId, FILTER_VALIDATE_INT);
 		if($userId === false) {
@@ -256,11 +256,43 @@ class DcfProfile {
 	}
 
 	/** TODO: write getFooBy(userName)
+	 * Get dcfProfile by userName
+	 *
+	 * @param PDO $pdo pointer to PDO connection, by reference
+	 * @param string $userName userName to search for
+	 * @return mixed dcfProfile found or null if none meet the criteria
+	 * @throws PDOException when mySQL related errors occur
 	 **/
+	public function getDcfProfileByUserName(PDO &$pdo, $userName) {
+		//sanitize the user name before searching
+		$userName = trim($userName);
+		$userName = filter_var($userName, FILTER_SANITIZE_STRING);
+		if(empty($userName) === true) {
+			throw(new PDOException("userName is invalid"));
+		}
 
+		//create query template
+		$query = "SELECT userID, eMail, userName FROM dcfProfile WHERE userName LIKE :userName";
+		$statement = $pdo->prepare($query);
 
+		//bind the member variables to the place holder in the template
+		$userName = "%userName%";
+		$parameters = array("userName" => $this->userName);
+		$statement->execute($parameters);
 
+		//build dcfProfile array
+		$dcfProfile = new SplFixedArray($statement->rowCount());
+		$statement->setFetchMode(PDO::FETCH_ASSOC);
+		while(($row = $statement->fetch() !== false) {
+			try {
+				$dcfProfile = new DcfProfile($row["userId"], $row[eMail], $row[userName]);
+				$dcfProfiles[$dcfProfiles->key()] = $dcfProfile;
+				$dcfProfiles->next();
+			} catch(Exception $exception) {
+				//if the row can't be converted rethrow it
+				throw(new PDOException($exception->getMessage(), 0, $exception));
+			}
+		}
 
-
-//  Class closing tag (mentioned just for code tracking purposes
+	}
 }
