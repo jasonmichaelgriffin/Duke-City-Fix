@@ -152,13 +152,77 @@ class DcfProfile {
 	}
 
 	/**
-	 * Inserts this profile into mySQL
+	 * Inserts this dcfProfile into mySQL
 	 *
-	 * @param
+	 * @param PDO $pdo pointer to PDO connection, by reference
+	 * @throws PDOException when mySQL related errors occur
 	 */
+	public function insert(PDO &$pdo) {
+
+		// force userId to be null, throwing an exception if it is not (and hence already exists)
+		if($this->userId !== null) {
+			throw(new PDOException("not a new userId"));
+		}
+
+		//create query template
+		$query = "INSERT INTO dcfProfile(userId, eMail, userName) VALUES(:userID, :eMail, ,:userName)";
+		$statement = $pdo->prepare($query);
+
+		//bind the member variables to the place holders in the template
+		$parameters = array("userId" => $this->userId, "eMail" => $this->eMail, "userName" => $this->userName);
+		$statement->execute($parameters);
+
+		// populate the userId that was previously null with what mySQL just assigned (so the object holds what was populated into the database).
+		$this->userID = intval($pdo->lastInsertId());
+	}
+
+	/**
+	 * updates this dcfProfile in mySQL
+	 *
+	 * @param PDO $pdo pointer to PDO connection, by reference
+	 * @throws PDOException when mySQL related errors occur
+	 **/
+	public function update(PDO &$pdo) {
+		//  force userID to not be null (only update pre-existing user profiles)
+		if($this->userID === null) {
+			throw (new PDOException( "Can't update a user profile that does not already exist"));
+		}
+
+		//create query template
+		$query = "UPDATE dcfProfile SET userID = :userID, eMail = :eMail, userName = :userName WHERE userID = :userID";
+		$statement = $pdo->prepare($query);
+
+		//bind the member variables to the place holders in the template
+		$parameters = array("userId" => $this->userId, "eMail" => $this->eMail, "userName" => $this->userName);
+		$statement->execute($parameters);
+	}
+
+	/**
+	 * Deletes a dcfProfile in mySQL
+	 *
+	 * @param PDO $pdo pointer to PDO connection, by reference
+	 * @throws PDOException when mySQL related errors occur
+	 */
+	public function delete(PDO &$pdo) {
+		// force userID to not be null; can't delete a dcfProfile that does not exist
+		if($this->userId !== null) {
+			throw(new PDOException("not a new userId"));
+		}
+		//create query template
+		$query = "DELETE FROM dcfProfile WHERE userId = :userId";
+		$statement = $pdo->prepare($query);
+
+		//bind the member variables to the place holder in the template
+		$parameters = array("userId" => $this->userId);
+		$statement->execute($parameters);
+	}
+
+	/** TODO: write getFooByPrimaryKey
+	 **/
 
 
-
+	/** TODO: write getFooBy(userName)
+	 **/
 
 
 

@@ -1,3 +1,7 @@
+// NOTE: I manually dropped all non-critical (to the ERD) fields from dcfProfile during project milestone phase 3A at the advice of Dylan.
+// Best practice would likely have been to update the code below and ran it, but that is not what I did.
+
+
 DROP TABLE IF EXISTS blogComment;
 DROP TABLE IF EXISTS blogPost;
 DROP TABLE IF EXISTS dcfProfile;

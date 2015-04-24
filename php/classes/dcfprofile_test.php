@@ -28,10 +28,9 @@ try {
 	// create a new DCF Profile TODO: complete this section
 	$profile = new DcfProfile(1, "zaphod@heartofgold.com", "FroodyDude");
 
-	// Catch Exceptions.  TODO:  Here too shouldn't we be including the high level Exception catch in addition to PDOException?  Ask Dylan or Eric
+	// Catch Exceptions.
 } catch(PDOException $pdoException) {
 	echo "Exception: " . $pdoException->getMessage();
 
 }
-//  TODO:  Ask why this closing tag is considered redundant by PHP
-?>
+//  NOTE: I removed the "?[NO_SPACE>" php closing tag as it was identified as redundant by phpStorm and Dylan confirmed it's been essentially deprecated.
