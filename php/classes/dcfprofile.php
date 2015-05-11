@@ -165,7 +165,7 @@ class DcfProfile {
 		}
 
 		//create query template
-		$query = "INSERT INTO dcfProfile(userId, eMail, userName) VALUES(:userID, :eMail, ,:userName)";
+		$query = "INSERT INTO dcfProfile(userId, eMail, userName) VALUES(:userID, :eMail, :userName)";
 		$statement = $pdo->prepare($query);
 
 		//bind the member variables to the place holders in the template
@@ -184,12 +184,12 @@ class DcfProfile {
 	 **/
 	public function update(PDO &$pdo) {
 		//  force userID to not be null (only update pre-existing user profiles)
-		if($this->userID === null) {
+		if($this->userId === null) {
 			throw (new PDOException( "Can't update a user profile that does not already exist"));
 		}
 
 		//create query template
-		$query = "UPDATE dcfProfile SET userID = :userID, eMail = :eMail, userName = :userName WHERE userID = :userID";
+		$query = "UPDATE dcfProfile SET userId = :userID, eMail = :eMail, userName = :userName WHERE userId = :userID";
 		$statement = $pdo->prepare($query);
 
 		//bind the member variables to the place holders in the template
@@ -217,7 +217,7 @@ class DcfProfile {
 		$statement->execute($parameters);
 	}
 
-	/** TODO: write getFooByPrimaryKey
+	/**
 	 * gets a dcfProfile by userId
 	 *
 	 * @param PDO $pdo pointer to PDO connection, by reference
@@ -233,7 +233,7 @@ class DcfProfile {
 		}
 
 		//create query template
-		$query = "SELECT userID, eMail, userName FROM dcfProfile WHERE userId = :userId";
+		$query = "SELECT userId, eMail, userName FROM dcfProfile WHERE userId = :userId";
 		$statement = $pdo->prepare($query);
 
 		//bind the member variables to the place holder in the template
@@ -255,7 +255,7 @@ class DcfProfile {
 		return($dcfProfile);
 	}
 
-	/** TODO: write getFooBy(userName)
+	/**
 	 * Get dcfProfile by userName
 	 *
 	 * @param PDO $pdo pointer to PDO connection, by reference
@@ -272,20 +272,20 @@ class DcfProfile {
 		}
 
 		//create query template
-		$query = "SELECT userID, eMail, userName FROM dcfProfile WHERE userName LIKE :userName";
+		$query = "SELECT userId, eMail, userName FROM dcfProfile WHERE userName LIKE :userName";
 		$statement = $pdo->prepare($query);
 
 		//bind the member variables to the place holder in the template
 		$userName = "%userName%";
-		$parameters = array("userName" => $this->userName);
+		$parameters = array("userName" => $userName);
 		$statement->execute($parameters);
 
 		//build dcfProfile array
 		$dcfProfile = new SplFixedArray($statement->rowCount());
 		$statement->setFetchMode(PDO::FETCH_ASSOC);
-		while(($row = $statement->fetch() !== false) {
+		while(($row = $statement->fetch()) !== false) {
 			try {
-				$dcfProfile = new DcfProfile($row["userId"], $row[eMail], $row[userName]);
+				$dcfProfile = new DcfProfile($row["userId"], $row["eMail"], $row["userName"]);
 				$dcfProfiles[$dcfProfiles->key()] = $dcfProfile;
 				$dcfProfiles->next();
 			} catch(Exception $exception) {
